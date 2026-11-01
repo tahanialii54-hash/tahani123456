@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مفاهيم الوراثة في JavaScript - أسلوب هرمش</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-decor">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="main-container">
+        
+        <!-- Header -->
+        <header class="header-card">
+            <h1>أشكال الوراثة في لغة JavaScript</h1>
+            <p>تطبيق عملي لمفاهيم البرمجة الكائنية (OOP) بأسلوب تعليمي متدرج</p>
+        </header>
+
+        <!-- قسم العناوين والتعاريف الأساسية -->
+        <section class="concepts-grid">
+            <div class="concept-card">
+                <div class="badge">1</div>
+                <h3>وراثة فردية (Single)</h3>
+                <p>تعني كلاس يَرِث من كلاس واحد فقط بشكل مباشر.</p>
+                <div class="tree-box">
+                    <span class="node">Class A</span>
+                    <span class="arrow">↓</span>
+                    <span class="node highlight">Class B</span>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <div class="badge">2</div>
+                <h3>وراثة متتالية (Multilevel)</h3>
+                <p>تعني كلاس يَرِث من كلاس والذي بدوره يَرِث من كلاس آخر.</p>
+                <div class="tree-box">
+                    <span class="node">Class A</span>
+                    <span class="arrow">↓</span>
+                    <span class="node">Class B</span>
+                    <span class="arrow">↓</span>
+                    <span class="node highlight">Class C</span>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <div class="badge">3</div>
+                <h3>وراثة هرمية (Hierarchical)</h3>
+                <p>تعني أن الكلاس الرئيسي موروث من قبل أكثر من كلاس فرعي.</p>
+                <div class="tree-box">
+                    <span class="node">Class A (الأب)</span>
+                    <div class="branch">
+                        <span>↙</span>
+                        <span>↘</span>
+                    </div>
+                    <div class="horizontal-nodes">
+                        <span class="node highlight">Class B</span>
+                        <span class="node highlight">Class C</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- التطبيق العملي التفاعلي -->
+        <section class="interactive-section">
+            
+            <!-- الواجهة 1: كلاس الأب -->
+            <div class="glass-card level-1">
+                <div class="card-header">
+                    <h2>الواجهة الأولى: كلاس الأب الأساسي <code>Person</code></h2>
+                    <span class="tag">الأساس</span>
+                </div>
+                <p>تحتوي هذه الواجهة على التعريف الأساسي لكلاس الأب وتحديد الخصائص العامة.</p>
+            </div>
+
+            <!-- الواجهة 2: الوراثة الفردية وكلاس الابن -->
+            <div class="glass-card level-2">
+                <div class="card-header">
+                    <h2>الواجهة الثانية: الوراثة الفردية <code>Student</code></h2>
+                    <span class="tag">تَرِث من Person</span>
+                </div>
+                <p>استقبال البيانات من المستخدم، إنشاء كائن الابن، وطباعة المخرجات.</p>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>اسم الطالب (خاصة الأب):</label>
+                        <input type="text" id="singleName" placeholder="مثال: أحمد المريسي">
+                    </div>
+                    <div class="form-group">
+                        <label>التخصص (خاصة الابن):</label>
+                        <input type="text" id="singleMajor" placeholder="مثال: علوم حاسوب">
+                    </div>
+                </div>
+
+                <button class="btn btn-purple" onclick="runSingleInheritance()">إنشاء كائن الابن وطباعة النتيجة</button>
+                <div id="outputSingle" class="output-box"></div>
+            </div>
+
+            <!-- الواجهة 3: الوراثة المتتالية (الحفيد) -->
+            <div class="glass-card level-3">
+                <div class="card-header">
+                    <h2>الواجهة الثالثة: الوراثة المتتالية <code>GraduateStudent</code></h2>
+                    <span class="tag">تَرِث من Student</span>
+                </div>
+                <p>استكمال الوراثة عبر 3 مستويات وإنشاء كائن الحفيد الجامع لكل الخصائص.</p>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>الاسم (من الأب):</label>
+                        <input type="text" id="multiName" placeholder="مثال: تهاني علي">
+                    </div>
+                    <div class="form-group">
+                        <label>التخصص (من الابن):</label>
+                        <input type="text" id="multiMajor" placeholder="مثال: هندسة برمجيات">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>عنوان بحث الماجستير (خاصة الحفيد):</label>
+                        <input type="text" id="multiThesis" placeholder="مثال: تطوير واجهات المستخدم بالتصميم الزجاجي">
+                    </div>
+                </div>
+
+                <button class="btn btn-mauve" onclick="runMultilevelInheritance()">إنشاء كائن الحفيد وطباعة النتيجة الشاملة</button>
+                <div id="outputMulti" class="output-box"></div>
+            </div>
+
+            <!-- الواجهة 4: الوراثة الهرمية -->
+            <div class="glass-card level-hierarchical">
+                <div class="card-header">
+                    <h2>الواجهة الرابعة: الوراثة الهرمية <code>Teacher</code></h2>
+                    <span class="tag">تَرِث أيضاً من Person</span>
+                </div>
+                <p>إنشاء كائن من كلاس فرعي آخر (المعلم) يشارك نفس كلاس الأب مع الطالب.</p>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>اسم المعلم (من الأب Person):</label>
+                        <input type="text" id="teacherName" placeholder="مثال: د. عبدالله">
+                    </div>
+                    <div class="form-group">
+                        <label>المادة المدرسّة (خاصة Teacher):</label>
+                        <input type="text" id="teacherSubject" placeholder="مثال: البرمجة الكائنية JavaScript">
+                    </div>
+                </div>
+
+                <button class="btn btn-dark-purple" onclick="runHierarchicalInheritance()">إنشاء كائن المعلم وطباعة النتيجة</button>
+                <div id="outputTeacher" class="output-box"></div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

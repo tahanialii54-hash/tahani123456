@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الواجهة الثالثة - الوراثة المتتالية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card page-3-card">
+    <h2>الواجهة 3: كلاس الحفيد (GraduateStudent)</h2>
+    <p>اكتمال الوراثة المتتالية وعرض التقرير الشامل:</p>
+    
+    <label>عنوان بحث التخرج:</label>
+    <input type="text" id="gradThesis" placeholder="مثال: الأنظمة الذكية والوراثة البرمجية">
+    <div id="errorPage3" class="error-message">يرجى كتابة عنوان البحث أولاً!</div>
+    
+    <button class="btn-dark" onclick="executeGraduate()">عرض التقرير الشامل للطبقات الثلاث</button>
+    <div id="outputLevel3" class="output"></div>
+
+    <button class="btn-reset" onclick="startOver()">إعادة البدء من جديد ↺</button>
+</div>
+<script src="script.js"></script>
+<script>
+    if (!localStorage.getItem('parentName') || !localStorage.getItem('childMajor')) { window.location.href = 'page1.html'; }
+</script>
+</body>
+</html>

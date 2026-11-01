@@ -1,0 +1,177 @@
+/* ===================================================
+   تنسيق الخطوط الواضحة والأسود الداكن مع الأزرق الزجاجي
+   =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+:root {
+    --bg-main: #f0f4f8;                   
+    --card-bg: rgba(255, 255, 255, 0.92);  
+    --card-border: rgba(255, 255, 255, 1);
+    
+    /* تم تغيير لون النص الأساسي إلى الأسود الداكن المريح والواضح جداً */
+    --text-primary: #0f172a;              
+    --text-secondary: #334155;            
+    
+    --blue-light: #e0f2fe;                
+    --blue-medium: #38bdf8;               
+    --blue-deep: #0369a1;                 
+    --blue-border-dark: #0284c7;          
+    --blue-soft: #f0f9ff;                 
+    --error-color: #dc2626;
+    
+    --shadow-soft: 0 12px 35px rgba(2, 132, 199, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    /* تعيين خط عربي أنيق وواضح (Cairo) لجميع النصوص والمكتوبات */
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    direction: rtl;
+    padding: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 35px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: var(--shadow-soft);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* الحواف الجانبية باللون الأزرق الغامق */
+.page-1-card { border-right: 6px solid #0f172a; }
+.page-2-card { border-right: 6px solid #0284c7; }
+.page-3-card { border-right: 6px solid #0369a1; }
+
+h2 {
+    color: #0c4a6e;
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary); /* أسود داكن واضح */
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 12px 15px;
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a; /* الكتابة داخل الخانات بالأسود الداكن */
+    outline: none;
+    transition: all 0.2s ease;
+    margin-bottom: 15px;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: var(--blue-border-dark);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-primary { background: linear-gradient(135deg, #f8fafc, #f1f5f9); color: #0f172a; border: 1px solid #cbd5e1; }
+.btn-secondary { background: linear-gradient(135deg, #e0f2fe, #bae6fd); color: #0369a1; }
+.btn-dark { background: linear-gradient(135deg, #38bdf8, #0284c7); color: white; }
+.btn-reset { background: #e2e8f0; color: #1e293b; }
+
+button:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+}
+
+.output {
+    margin-top: 15px;
+    padding: 15px;
+    background: var(--blue-soft);
+    border-radius: 10px;
+    border-right: 4px solid var(--blue-border-dark);
+    color: #0f172a; /* النصوص داخل صندوق المخرجات بالأسود الداكن الواضح */
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.6;
+    display: none;
+    white-space: pre-line;
+}
+
+/* تنسيق الجدول الزجاجي */
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.95rem;
+}
+
+.summary-table th, .summary-table td {
+    padding: 12px;
+    text-align: right;
+    border-bottom: 1px solid #e2e8f0;
+    color: #0f172a; /* كتابة الجدول بالأسود الداكن */
+    font-weight: 600;
+}
+
+.summary-table th {
+    background: var(--blue-light);
+    color: #0369a1;
+    font-weight: 700;
+}

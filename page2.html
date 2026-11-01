@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الواجهة الثانية - كلاس الابن</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card page-2-card">
+    <h2>الواجهة 2: كلاس الابن (Student)</h2>
+    <p>تَرِث البيانات من الأب وتتيح اختيار التخصص من القائمة المنسدلة:</p>
+    
+    <label>اختاري التخصص الدراسي:</label>
+    <select id="childMajor">
+        <option value="">-- اضغطي لاختيار التخصص --</option>
+        <option value="هندسة برمجيات">هندسة برمجيات (Software Engineering)</option>
+        <option value="علوم الحاسوب">علوم الحاسوب (Computer Science)</option>
+        <option value="تقنية المعلومات">تقنية المعلومات (Information Technology)</option>
+        <option value="نظم المعلومات">نظم المعلومات (Information Systems)</option>
+    </select>
+    <div id="errorPage2" class="error-message">يرجى اختيار التخصص من القائمة أولاً!</div>
+    
+    <button class="btn-secondary" onclick="executeStudent()">1. إنشاء كائن الابن وعرض النتيجة</button>
+    <div id="outputLevel2" class="output"></div>
+
+    <button class="btn-dark" onclick="goToPage3()">2. الانتقال للواجهة الثالثة (الحفيد) ➔</button>
+</div>
+<script src="script.js"></script>
+<script>
+    if (!localStorage.getItem('parentName')) { window.location.href = 'page1.html'; }
+</script>
+</body>
+</html>

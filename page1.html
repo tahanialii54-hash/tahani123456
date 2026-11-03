@@ -2,22 +2,20 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الواجهة الأولى - كلاس الأب</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="card page-1-card">
     <h2>الواجهة 1: كلاس الأب (Person)</h2>
-    <p>أدخلي الاسم الأساسي ليتم حفظه في كلاس الأب والانتقال للصفحة الثانية:</p>
+    <p>أدخلي الاسم الأساسي ليتم حفظه والانتقال للواجهة الثانية:</p>
     
-    <label>الاسم (خاص بكلاس الأب):</label>
+    <label>الاسم الكامل:</label>
     <input type="text" id="parentName" placeholder="مثال: تهاني علي">
+    <div id="errorPage1" class="error-message">يرجى كتابة الاسم قبل المتابعة!</div>
     
-    <button class="btn-primary" onclick="goToPage2()">حفظ الانتقال للواجهة الثانية ➔</button>
+    <button class="btn-primary" onclick="goToPage2()">حفظ والانتقال للواجهة الثانية ➔</button>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
